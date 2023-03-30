@@ -8,10 +8,7 @@ public class ProcessPersonList {
 
         Iterator<EcoPerson> iterator = ecoPersonList.iterator();
         while (iterator.hasNext()) {
-
-
             EcoPerson person = iterator.next();
-
             int resourceWater = person.getWaterCount();
             int resourceGas = person.getGasCount1() + person.getGasCount2();
             int resourceElectro = person.getElectroCount1() + person.getElectroCount2();
