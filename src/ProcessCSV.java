@@ -7,7 +7,7 @@ public class ProcessCSV {
 
     static final String ROW_NAME = "id|name|waterCount|gasCount1|gasCount2|electroCount1|electroCount2\r\n";
 
-    public static void writePersonData(List<EcoPerson> ecoPersonList, String path) {
+    public static void writePersonToFile(List<EcoPerson> ecoPersonList, String path) {
         String fileName = path + "/../EkoPeopleResult.csv";
         StringBuilder stringBuilder = new StringBuilder(ROW_NAME);
 
@@ -23,7 +23,7 @@ public class ProcessCSV {
     }
 
 
-    public static List<EcoPerson> readPersonData(String path) throws FileNotFoundException {
+    public static List<EcoPerson> readPersonFromFile(String path) throws FileNotFoundException {
         String fileName = path;
         List<EcoPerson> ecoPersonList = new ArrayList<>();
 
