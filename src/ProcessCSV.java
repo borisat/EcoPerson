@@ -8,7 +8,7 @@ public class ProcessCSV {
     static final String ROW_NAME = "id|name|waterCount|gasCount1|gasCount2|electroCount1|electroCount2\r\n";
 
     public static void writePersonToFile(List<EcoPerson> ecoPersonList, String path) {
-        String fileName = path + "/../EkoPeopleResult.csv";
+        String fileName = path + "/../EcoPersonResult.csv";
         StringBuilder stringBuilder = new StringBuilder(ROW_NAME);
 
         for (int i = 0; i < ecoPersonList.size(); i++) {
