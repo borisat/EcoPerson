@@ -25,7 +25,7 @@ public class ProcessCSV {
 
     public static List<EcoPerson> readPersonFromFile(String path) throws FileNotFoundException {
         String fileName = path;
-        List<EcoPerson> ecoPersonList = new ArrayList<>();
+        List<EcoPerson> PersonList = new ArrayList<>();
 
         Scanner scanner = new Scanner(new File(fileName));
         while (scanner.hasNextLine()) {
@@ -33,7 +33,7 @@ public class ProcessCSV {
                 String rows = scanner.nextLine();
                 String[] rowsArray = rows.split("\\|");
 
-                ecoPersonList.add(new EcoPerson(Integer.parseInt(rowsArray[0]), rowsArray[1],
+                PersonList.add(new EcoPerson(Integer.parseInt(rowsArray[0]), rowsArray[1],
                         Integer.parseInt(rowsArray[2]),
                         Integer.parseInt(rowsArray[3]),
                         Integer.parseInt(rowsArray[4]),
@@ -45,7 +45,7 @@ public class ProcessCSV {
         }
 
         scanner.close();
-        return ecoPersonList;
+        return PersonList;
 
 
     }
