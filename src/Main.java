@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        CSVReaderWriter.writePersonData(CSVReaderWriter.readPersonData(INPUT_PATH),
+        ProcessCSV.writePersonData(ProcessCSV.readPersonData(INPUT_PATH),
                 OUTPUT_PATH);
     }
 

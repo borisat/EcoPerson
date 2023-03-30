@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class CSVReaderWriter {
+public class ProcessCSV {
 
     static final String ROW_NAME = "id|name|waterCount|gasCount1|gasCount2|electroCount1|electroCount2\r\n";
     static final int MAX_RESOURCE_USAGE = 200;
@@ -57,7 +57,7 @@ public class CSVReaderWriter {
     }
 
 
-    public static boolean resourceOverspend(EcoPerson ecoPerson) {
+    private static boolean resourceOverspend(EcoPerson ecoPerson) {
 
         int resourceWater = ecoPerson.getWaterCount();
         int resourceGas = ecoPerson.getGasCount1() + ecoPerson.getGasCount2();
@@ -71,5 +71,6 @@ public class CSVReaderWriter {
 
         return false;
     }
+
 }
 
