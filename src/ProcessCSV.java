@@ -6,18 +6,12 @@ import java.util.Scanner;
 public class ProcessCSV {
 
     static final String ROW_NAME = "id|name|waterCount|gasCount1|gasCount2|electroCount1|electroCount2\r\n";
-    static final int MAX_RESOURCE_USAGE = 200;
-
 
     public static void writePersonData(List<EcoPerson> ecoPersonList, String path) {
-        String fileName = path;
+        String fileName = path + "/../EkoPeopleResult.csv";
         StringBuilder stringBuilder = new StringBuilder(ROW_NAME);
 
         for (int i = 0; i < ecoPersonList.size(); i++) {
-            if (resourceOverspend(ecoPersonList.get(i))) {
-                continue;
-            }
-
             stringBuilder.append(ecoPersonList.get(i).toString());
 
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
@@ -57,20 +51,7 @@ public class ProcessCSV {
     }
 
 
-    private static boolean resourceOverspend(EcoPerson ecoPerson) {
-
-        int resourceWater = ecoPerson.getWaterCount();
-        int resourceGas = ecoPerson.getGasCount1() + ecoPerson.getGasCount2();
-        int resourceElectro = ecoPerson.getElectroCount1() + ecoPerson.getElectroCount2();
-
-        if (resourceWater > MAX_RESOURCE_USAGE ||
-                resourceElectro > MAX_RESOURCE_USAGE ||
-                resourceGas > MAX_RESOURCE_USAGE) {
-            return true;
-        }
-
-        return false;
-    }
-
 }
+
+
 
