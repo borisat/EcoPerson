@@ -4,9 +4,9 @@ import java.util.List;
 public class PersonProcessor {
 
     public static List<EcoPerson> getEcoPerson(List<EcoPerson> personList, int maxResourceUsage) {
-
         List<EcoPerson> ecoPersonList = personList;
         Iterator<EcoPerson> iterator = ecoPersonList.iterator();
+
         while (iterator.hasNext()) {
             EcoPerson person = iterator.next();
             int resourceWater = person.getWaterCount();
@@ -17,8 +17,6 @@ public class PersonProcessor {
                     resourceElectro > maxResourceUsage ||
                     resourceGas > maxResourceUsage) {
                 iterator.remove();
-
-
             }
         }
         return ecoPersonList;
