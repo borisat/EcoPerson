@@ -14,9 +14,9 @@ public class Main {
     }
 
     public static void processFile(String source, int maxResourceUsage) throws FileNotFoundException {
-        List<EcoPerson> personList = ProcessCSV.readPersonFromFile(source);
-        ProcessPersonList.getEcoPerson(personList, maxResourceUsage);
-        ProcessCSV.writePersonToFile(personList, source );
+        List<EcoPerson> personList = CSVProcessor.readPersonFromFile(source);
+        PersonProcessor.getEcoPerson(personList, maxResourceUsage);
+        CSVProcessor.writePersonToFile(personList, source );
     }
 
 }

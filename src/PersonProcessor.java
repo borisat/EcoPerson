@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.List;
 
-public class ProcessPersonList {
+public class PersonProcessor {
 
     public static void getEcoPerson(List<EcoPerson> ecoPersonList, int maxResourceUsage) {
 

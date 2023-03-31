@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProcessCSV {
+public class CSVProcessor {
 
     static final String ROW_NAME = "id|name|waterCount|gasCount1|gasCount2|electroCount1|electroCount2\r\n";
 
@@ -25,7 +25,7 @@ public class ProcessCSV {
 
     public static List<EcoPerson> readPersonFromFile(String path) throws FileNotFoundException {
         String fileName = path;
-        List<EcoPerson> PersonList = new ArrayList<>();
+        List<EcoPerson> personList = new ArrayList<>();
 
         Scanner scanner = new Scanner(new File(fileName));
         while (scanner.hasNextLine()) {
@@ -33,7 +33,7 @@ public class ProcessCSV {
                 String rows = scanner.nextLine();
                 String[] rowsArray = rows.split("\\|");
 
-                PersonList.add(new EcoPerson(Integer.parseInt(rowsArray[0]), rowsArray[1],
+                personList.add(new EcoPerson(Integer.parseInt(rowsArray[0]), rowsArray[1],
                         Integer.parseInt(rowsArray[2]),
                         Integer.parseInt(rowsArray[3]),
                         Integer.parseInt(rowsArray[4]),
@@ -45,7 +45,7 @@ public class ProcessCSV {
         }
 
         scanner.close();
-        return PersonList;
+        return personList;
 
 
     }
